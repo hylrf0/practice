@@ -27,13 +27,25 @@ public class Sequence {
   }
 
   public static void main(String[] args) {
+//    Sequence sequence = new Sequence(10);
+//    for(int i=0; i<10; i++) {
+//      sequence.add(Integer.toString(i));
+//    }
+//    Selector selector = sequence.selector();
+//    while (!selector.end()) {
+//      System.out.print(selector.current() + "  ");
+//      selector.next();
+//    }
+
     Sequence sequence = new Sequence(10);
     for(int i=0; i<10; i++) {
-      sequence.add(Integer.toString(i));
+      HasString hasString = new HasString();
+      hasString.setString(String.valueOf(i) + "  呵呵");
+      sequence.add(hasString.toString());
     }
     Selector selector = sequence.selector();
     while (!selector.end()) {
-      System.out.print(selector.current() + "  ");
+      System.out.println(selector.current() + "  ");
       selector.next();
     }
   }
@@ -43,4 +55,16 @@ interface Selector {
   boolean end();
   Object current();
   void next();
+}
+
+class HasString {
+  private String str;
+
+  public void setString(String str){
+    this.str = str;
+  }
+
+  public String toString() {
+    return this.str;
+  }
 }

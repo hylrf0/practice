@@ -1,4 +1,4 @@
-package excel;
+package other.excel;
 
 /**
  * Created by linrufeng on 16/5/18.

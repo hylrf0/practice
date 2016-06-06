@@ -1,4 +1,4 @@
-package eight;
+package demo.eight;
 
 import java.util.Random;
 

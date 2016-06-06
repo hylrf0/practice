@@ -1,4 +1,4 @@
-package eight;
+package demo.eight;
 
 /**
  * Created by linrufeng on 16/5/3.

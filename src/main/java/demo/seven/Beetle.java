@@ -1,4 +1,4 @@
-package seven;
+package demo.seven;
 
 /**
  * Created by linrufeng on 16/4/28.

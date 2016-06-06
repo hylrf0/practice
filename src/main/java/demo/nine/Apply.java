@@ -1,4 +1,4 @@
-package nine;
+package demo.nine;
 
 import java.util.Arrays;
 

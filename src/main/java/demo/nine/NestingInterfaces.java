@@ -1,4 +1,4 @@
-package nine;
+package demo.nine;
 
 /**
  * Created by linrufeng on 16/5/13.

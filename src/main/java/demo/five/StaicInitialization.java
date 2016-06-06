@@ -1,4 +1,4 @@
-package five;
+package demo.five;
 
 /**
  * Created by linrufeng on 16/4/28.

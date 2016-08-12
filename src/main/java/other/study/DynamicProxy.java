@@ -3,6 +3,8 @@ package other.study;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by linrufeng on 16/8/12.
@@ -17,18 +19,18 @@ public class DynamicProxy implements InvocationHandler {
 
   @Override
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    before();
+    Long time = before();
     Object result = method.invoke(target, args);
-    after();
+    after(time);
     return result;
   }
 
-  private void before() {
-    System.out.println("Before");
+  private Long before() {
+    return System.currentTimeMillis();
   }
 
-  private void after() {
-    System.out.println("After");
+  private void after(Long time) {
+    System.out.println("耗时:" + (System.currentTimeMillis() - time));
   }
 
   @SuppressWarnings("unchecked")

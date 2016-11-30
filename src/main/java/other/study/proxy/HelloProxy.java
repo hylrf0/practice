@@ -1,4 +1,4 @@
-package other.study;
+package other.study.proxy;
 
 /**
  * Created by linrufeng on 16/8/12.
@@ -11,7 +11,6 @@ public class HelloProxy implements Hello {
     hello = new HelloImpl();
   }
 
-  @Override
   public void say(String name) {
     before();
     hello.say(name);

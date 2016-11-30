@@ -1,10 +1,8 @@
-package other.study;
+package other.study.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by linrufeng on 16/8/12.
@@ -17,7 +15,6 @@ public class DynamicProxy implements InvocationHandler {
     this.target = target;
   }
 
-  @Override
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
     Long time = before();
     Object result = method.invoke(target, args);

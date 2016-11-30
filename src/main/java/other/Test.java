@@ -1,61 +1,53 @@
 package other;
 
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by linrufeng on 16/5/9.
  */
 public class Test {
-//  /**
-//   * @param args
-//   */
-//  public static void main(String[] args) {
-//    User u1 = new User(1,"Jacky","123456");
-//    User u2 = new User(2,"Jacky","123456");
-//    User u3 = new User(3,"CRT","123456");
-//    User u4 = new User(4,"Lsp","123456");
-//
-//    System.out.println("equal==>"+(u1.equals(u2)));
-//
-//    Set set = new LinkedHashSet();
-//    set.add(u1);
-//    set.add(u2);
-//    set.add(u3);
-//    set.add(u4);
-//
-//    System.out.println("set size==>"+set.size());
-//
-//    Iterator iterator = set.iterator();
-//    while(iterator.hasNext()){
-//      User temp =(User)iterator.next();
-//      System.out.println("temp username==>"+temp.getName());
-//    }
-//
-//  }
 
-  public void testt(){
-    User u1 = new User(1,"Jacky","123456");
-    User u2 = new User(2,"Jacky","123456");
-    User u3 = new User(3,"CRT","123456");
-    User u4 = new User(4,"Lsp","123456");
-
-    System.out.println("equal==>"+(u1.equals(u2)));
-
-    Set set = new LinkedHashSet();
-    set.add(u1);
-    set.add(u2);
-    set.add(u3);
-    set.add(u4);
-
-    System.out.println("set size==>"+set.size());
-
-    Iterator iterator = set.iterator();
-    while(iterator.hasNext()){
-      User temp =(User)iterator.next();
-      System.out.println("temp username==>"+temp.getName());
+  public Object testt(Class<?> cls, Map<String, Object> map, Map<String, Class<?>> classMap) {
+    Field[] fields = cls.getDeclaredFields();
+    try {
+      Object object = cls.newInstance();
+      for(String string : map.keySet()) {
+        for(Field field : fields) {
+          if(string.equals(field.getName())) {
+            String methodName = "set" + string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+            Method method = cls.getMethod(methodName, classMap.get(string));
+            method.invoke(object, map.get(string));
+          }
+        }
+      }
+      return object;
+    } catch (InstantiationException e) {
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    } catch (NoSuchMethodException e) {
+      e.printStackTrace();
+    } catch (InvocationTargetException e) {
+      e.printStackTrace();
     }
+    return null;
   }
 
+  public static void main(String[] args) {
+    Test test = new Test();
+    Map<String, Object> map = new HashMap<>();
+    map.put("name", "hehe");
+    map.put("id", 11);
+    Map<String, Class<?>> classMap = new HashMap<>();
+    classMap.put("name", String.class);
+    classMap.put("id", int.class);
+    User user = (User) test.testt(User.class, map, classMap);
+    System.out.println(user.getName());
+    System.out.println(user.getId());
+  }
 }

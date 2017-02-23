@@ -25,11 +25,11 @@ public class TestStatic {
     }
   }
 
-  public static void main(String[] args) {
-    TestStatic testStatic = new TestStatic();
-    testStatic.innerClasses = new ArrayList<>();
-    testStatic.innerClasses.add(new innerClass());
-    testStatic.innerClasses.get(0).setSex("xxx");
-    System.out.println(testStatic.innerClasses.get(0).sex);
-  }
+//  public static void main(String[] args) {
+//    TestStatic testStatic = new TestStatic();
+//    testStatic.innerClasses = new ArrayList<>();
+//    testStatic.innerClasses.add(new innerClass());
+//    testStatic.innerClasses.get(0).setSex("xxx");
+//    System.out.println(testStatic.innerClasses.get(0).sex);
+//  }
 }

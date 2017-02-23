@@ -40,10 +40,10 @@ public class Test {
 
   public static void main(String[] args) {
     Test test = new Test();
-    Map<String, Object> map = new HashMap<>();
+    Map<String, Object> map = new HashMap<String, Object>();
     map.put("name", "hehe");
     map.put("id", 11);
-    Map<String, Class<?>> classMap = new HashMap<>();
+    Map<String, Class<?>> classMap = new HashMap<String, Class<?>>();
     classMap.put("name", String.class);
     classMap.put("id", int.class);
     User user = (User) test.testt(User.class, map, classMap);

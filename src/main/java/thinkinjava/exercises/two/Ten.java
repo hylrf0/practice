@@ -1,4 +1,4 @@
-package thinkinjava.exercises.one;
+package thinkinjava.exercises.two;
 
 import java.util.Scanner;
 

@@ -13,13 +13,20 @@ public class TransmitTest {
     }
 
     public void chageTransmitTestA(TransmitTestA transmitTestA) {
+        System.out.println(transmitTestA.getTransmitTestB());
         transmitTestA.setI(10);
         transmitTestA.setIn(10);
         transmitTestA.transmitTestB = new TransmitTestB();
+        System.out.println(transmitTestA.getTransmitTestB());
     }
 
     public void changeValue(int k) {
         k = k * 2;
+    }
+
+    public void changeObject(B b) {
+        System.out.println(b);
+        b = new B();
     }
 
     public static void main(String[] args) {
@@ -52,6 +59,11 @@ public class TransmitTest {
         transmitTest.changeValue(k);
         System.out.println(k);
         System.out.println("-----------------------------------------");
+
+        B b = new B();
+        System.out.println(b);
+        transmitTest.changeObject(b);
+        System.out.println(b);
     }
 }
 

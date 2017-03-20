@@ -14,7 +14,7 @@ public class Fifteen {
             if (String.valueOf(chars[i]).equals("+")) {
                 stringStack.push(String.valueOf(chars[++i]));
             } else {
-                System.out.print(stringStack.pop());
+
             }
         }
     }

@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class Test {
     public static void main(String[] args) {
-//        encode(106441);
+        encode(1158567);
 //        overflowNum();
 //        decode(new StringBuffer("1094432419"));
 //        System.out.println((1015654903 ^ 1136593273) / (float)397);
@@ -31,9 +31,14 @@ public class Test {
 //            System.out.println(s);
 //        }
 
-        Tttt tttt = new Tttt<String, Integer>("abc", 123);
-        System.out.println(tttt.getA());
-        System.out.println(tttt.getB());
+//        Tttt tttt = new Tttt<String, Integer>("abc", 123);
+//        System.out.println(tttt.getA());
+//        System.out.println(tttt.getB());
+
+//        String a = "【黄财祯】【15770800094】【ios-】【2103502865】【已关锁，系统提示还在骑行】【2017-06-17 21:52:01】【广东省广州市增城市府佑西路,广州市增城区荔城街荔星大道299号】";
+//        System.out.println(a.length());
+//        String b = "您的故障上报编号【1572709】已受理，多出的骑行费用小鸣单车会返还，请放心使用。如果小鸣APP还在计费，请清理手机后台运行程序。";
+//        System.out.println(b.length());
     }
 
 

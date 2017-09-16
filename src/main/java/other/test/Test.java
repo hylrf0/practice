@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import lombok.Data;
 
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.*;
 
@@ -11,34 +12,23 @@ import java.util.*;
  * Created by Administrator on 2017/3/14 0014.
  */
 public class Test {
+
     public static void main(String[] args) {
-        encode(1158567);
-//        overflowNum();
-//        decode(new StringBuffer("1094432419"));
-//        System.out.println((1015654903 ^ 1136593273) / (float)397);
-//        Calendar now =Calendar.getInstance();
-//        now.setTime(new Date());
-//        now.set(Calendar.DATE,now.get(Calendar.DATE)+30);
-//        System.out.println(now.getTime());
-//        Random random = new Random();
-//        for (int i=0 ; i<1000 ; i++) {
-//            splitStrings(random.nextInt(1050));
-//        }
-//        Random random = new Random();
-//        while (true) {
-//            String s = "asdf" + random.nextInt(99999999);
-//            s.intern();
-//            System.out.println(s);
-//        }
+        CreditLevel creditLevel = new CreditLevel();
+        creditLevel.setLevel(123);
 
-//        Tttt tttt = new Tttt<String, Integer>("abc", 123);
-//        System.out.println(tttt.getA());
-//        System.out.println(tttt.getB());
+        Class clazz = creditLevel.getClass();
+        try {
+            Field field = clazz.getDeclaredField("level");
+            field.setAccessible(true);
+            Object v = field.get(creditLevel);
+            System.out.println(v.toString());
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
-//        String a = "【黄财祯】【15770800094】【ios-】【2103502865】【已关锁，系统提示还在骑行】【2017-06-17 21:52:01】【广东省广州市增城市府佑西路,广州市增城区荔城街荔星大道299号】";
-//        System.out.println(a.length());
-//        String b = "您的故障上报编号【1572709】已受理，多出的骑行费用小鸣单车会返还，请放心使用。如果小鸣APP还在计费，请清理手机后台运行程序。";
-//        System.out.println(b.length());
     }
 
 
@@ -95,22 +85,22 @@ public class Test {
         }
         System.out.println("耗时：" + (System.nanoTime() - start) / (float)100000000);
     }
+}
 
-    @Data
-    private class CreditLevel {
+@Data
+class CreditLevel {
 
-        private Integer level;
+    private Integer level;
 
-        private String levelName;
+    private String levelName;
 
-        private Integer minCredit;
+    private Integer minCredit;
 
-        private Integer maxCredit;
+    private Integer maxCredit;
 
-        private String picUrl;
+    private String picUrl;
 
-        private BigDecimal overdraft;
-    }
+    private BigDecimal overdraft;
 }
 
 @Data

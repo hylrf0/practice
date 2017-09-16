@@ -1,4 +1,4 @@
-package demo.eighteen;
+package thinkinjava.demo.eighteen;
 
 import java.io.File;
 import java.io.FilenameFilter;

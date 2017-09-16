@@ -1,4 +1,4 @@
-package demo.eleven;
+package thinkinjava.demo.eleven;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package demo.nine;
+package thinkinjava.demo.nine;
 
 
 /**

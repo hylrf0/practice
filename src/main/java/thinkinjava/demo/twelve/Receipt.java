@@ -1,4 +1,4 @@
-package demo.twelve;
+package thinkinjava.demo.twelve;
 
 import java.util.Formatter;
 

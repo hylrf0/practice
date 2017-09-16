@@ -1,4 +1,4 @@
-package demo.fourteen;
+package thinkinjava.demo.fourteen;
 
 /**
  * Created by linrufeng on 16/7/19.

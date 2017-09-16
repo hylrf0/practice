@@ -1,4 +1,4 @@
-package demo.fourteen;
+package thinkinjava.demo.fourteen;
 
 import java.util.Random;
 

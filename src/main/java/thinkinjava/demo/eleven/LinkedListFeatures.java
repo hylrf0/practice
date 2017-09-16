@@ -1,4 +1,4 @@
-package demo.eleven;
+package thinkinjava.demo.eleven;
 
 import java.util.Arrays;
 import java.util.LinkedList;

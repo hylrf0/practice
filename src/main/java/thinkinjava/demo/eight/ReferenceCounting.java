@@ -1,4 +1,4 @@
-package demo.eight;
+package thinkinjava.demo.eight;
 
 /**
  * Created by linrufeng on 16/5/3.

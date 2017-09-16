@@ -1,4 +1,4 @@
-package demo.eight;
+package thinkinjava.demo.eight;
 
 import java.util.Random;
 

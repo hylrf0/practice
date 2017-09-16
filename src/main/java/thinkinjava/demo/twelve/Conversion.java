@@ -1,4 +1,4 @@
-package demo.twelve;
+package thinkinjava.demo.twelve;
 
 import java.math.BigInteger;
 import java.util.Formatter;

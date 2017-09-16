@@ -1,4 +1,4 @@
-package demo.five;
+package thinkinjava.demo.five;
 
 /**
  * Created by linrufeng on 16/4/28.

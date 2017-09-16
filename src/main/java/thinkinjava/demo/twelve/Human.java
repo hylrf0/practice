@@ -1,4 +1,4 @@
-package demo.twelve;
+package thinkinjava.demo.twelve;
 
 /**
  * Created by linrufeng on 16/6/22.

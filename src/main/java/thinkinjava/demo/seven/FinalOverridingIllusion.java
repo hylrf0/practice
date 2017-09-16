@@ -1,4 +1,4 @@
-package demo.seven;
+package thinkinjava.demo.seven;
 
 /**
  * Created by linrufeng on 16/4/28.

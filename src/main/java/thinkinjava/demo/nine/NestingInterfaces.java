@@ -20,7 +20,7 @@ public class NestingInterfaces {
   }
   class EImp2 implements E {
     public void g() {}
-    class EG implements E.G{
+    class EG implements G{
       public void f() {}
     }
   }

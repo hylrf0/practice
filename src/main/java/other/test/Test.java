@@ -1,12 +1,10 @@
 package other.test;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import lombok.Data;
 
-import java.lang.reflect.Field;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/3/14 0014.
@@ -14,20 +12,18 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        CreditLevel creditLevel = new CreditLevel();
-        creditLevel.setLevel(123);
+//        encode(1158567);
+//        CreditLevel creditLevel = new CreditLevel();
+//
+//        Test test = new Test();
+//        test.t(creditLevel);
+//        System.out.println(creditLevel.getLevelName());
 
-        Class clazz = creditLevel.getClass();
-        try {
-            Field field = clazz.getDeclaredField("level");
-            field.setAccessible(true);
-            Object v = field.get(creditLevel);
-            System.out.println(v.toString());
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        String a = "a";
+        String b = new String("a");
+        String c = "a";
+        System.out.println(a == b);
+        System.out.println(a == c);
 
     }
 
@@ -70,38 +66,28 @@ public class Test {
         System.out.println(s.toString());
     }
 
-    public static void splitStrings(Integer credit) {
-        Long start = System.nanoTime();
-        //等级：等级名称：等级分值：勋章图片：透支额度
-        String value = "[{\"level\":0,\"levelName\":\"小黑屋\",\"minCredit\":0,\"maxCredit\":80,\"picUrl\":\"0.jpg\",\"overdraft\":0},{\"level\":1,\"levelName\":\"VIP1\",\"minCredit\":80,\"maxCredit\":120,\"picUrl\":\"1.jpg\",\"overdraft\":20},{\"level\":2,\"levelName\":\"VIP2\",\"minCredit\":120,\"maxCredit\":200,\"picUrl\":\"2.jpg\",\"overdraft\":25},{\"level\":3,\"levelName\":\"VIP3\",\"minCredit\":200,\"maxCredit\":440,\"picUrl\":\"3.jpg\",\"overdraft\":30},{\"level\":4,\"levelName\":\"VIP4\",\"minCredit\":440,\"maxCredit\":1000,\"picUrl\":\"4.jpg\",\"overdraft\":35},{\"level\":5,\"levelName\":\"VIP5\",\"minCredit\":1000,\"maxCredit\":2147483647,\"picUrl\":\"5.jpg\",\"overdraft\":40}]";
-        Gson gson = new Gson();
-        List<CreditLevel> creditLevelList = gson.fromJson(value, new TypeToken<List<CreditLevel>>(){}.getType());
-        for (CreditLevel creditLevel : creditLevelList) {
-            if (credit >= creditLevel.getMinCredit() && credit < creditLevel.getMaxCredit()) {
-                System.out.println("分数：" + credit + "，等级：" + creditLevel.getLevelName());
-            } else {
-                continue;
-            }
-        }
-        System.out.println("耗时：" + (System.nanoTime() - start) / (float)100000000);
+//    public static void splitStrings(Integer credit) {
+//        Long start = System.nanoTime();
+//        //等级：等级名称：等级分值：勋章图片：透支额度
+//        String value = "[{\"level\":0,\"levelName\":\"小黑屋\",\"minCredit\":0,\"maxCredit\":80,\"picUrl\":\"0.jpg\",\"overdraft\":0},{\"level\":1,\"levelName\":\"VIP1\",\"minCredit\":80,\"maxCredit\":120,\"picUrl\":\"1.jpg\",\"overdraft\":20},{\"level\":2,\"levelName\":\"VIP2\",\"minCredit\":120,\"maxCredit\":200,\"picUrl\":\"2.jpg\",\"overdraft\":25},{\"level\":3,\"levelName\":\"VIP3\",\"minCredit\":200,\"maxCredit\":440,\"picUrl\":\"3.jpg\",\"overdraft\":30},{\"level\":4,\"levelName\":\"VIP4\",\"minCredit\":440,\"maxCredit\":1000,\"picUrl\":\"4.jpg\",\"overdraft\":35},{\"level\":5,\"levelName\":\"VIP5\",\"minCredit\":1000,\"maxCredit\":2147483647,\"picUrl\":\"5.jpg\",\"overdraft\":40}]";
+//        Gson gson = new Gson();
+//        List<CreditLevel> creditLevelList = gson.fromJson(value, new TypeToken<List<CreditLevel>>(){}.getType());
+//        for (CreditLevel creditLevel : creditLevelList) {
+//            if (credit >= creditLevel.getMinCredit() && credit < creditLevel.getMaxCredit()) {
+//                System.out.println("分数：" + credit + "，等级：" + creditLevel.getLevelName());
+//            } else {
+//                continue;
+//            }
+//        }
+//        System.out.println("耗时：" + (System.nanoTime() - start) / (float)100000000);
+//    }
+
+    public void t(CreditLevel creditLevel) {
+        creditLevel.setLevelName("通天塔");
     }
 }
 
-@Data
-class CreditLevel {
 
-    private Integer level;
-
-    private String levelName;
-
-    private Integer minCredit;
-
-    private Integer maxCredit;
-
-    private String picUrl;
-
-    private BigDecimal overdraft;
-}
 
 @Data
 class Tttt<A, B>{
